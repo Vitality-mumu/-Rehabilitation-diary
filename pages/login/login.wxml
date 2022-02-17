@@ -1,0 +1,40 @@
+<view class="login">
+  <nav-bar show-back="{{backstatus}}" page-name="{{title}}" bgc="#137DF5"></nav-bar>
+  <view class="login-content" style="margin-top:{{navBarHeight}}px">
+    <view class="login-info">
+      <view class="title">
+        <view class="blue-line"></view>
+        <text>账号登录</text>
+      </view>
+      <van-cell-group>
+        <view class="input">
+          <image src="../../assets/image/user.png"></image>
+          <view class="input-line"></view>
+          <van-field class="input-class" value="{{ user }}" placeholder="请输入用户名" border="{{ false }}" bind:change="onUserChange" />
+        </view>
+        <view class="input">
+          <image src="../../assets/image/password.png"></image>
+          <view class="input-line"></view>
+          <van-field class="input-class" value="{{ pass }}" placeholder="请输入密码" type="password" border="{{ false }}" bind:change="onPassChange" />
+        </view>
+      </van-cell-group>
+      <!-- 隐私政策 -->
+      <view class="privacy-file">
+        <van-radio-group value="{{ radio }}" bind:change="onChange">
+          <van-radio name="1"  icon-size="small"></van-radio>
+        </van-radio-group>
+        我已阅读并同意
+        <navigator url="/pages/webview/index?navBgColor=#137DF5&navColor=#ffffff&src=https://wanbei.site/index/index/diaryconsent">
+          《服务协议》
+        </navigator>
+        与
+        <navigator url="/pages/webview/index?navBgColor=#137DF5&navColor=#ffffff&src=https://wanbei.site/index/index/diarypolicy">
+          《隐私政策》
+        </navigator>
+      </view>
+      <view class="btn" bind:tap="onLoginClick" style="background-color:{{ user&&pass? '#386CE2':'#B5B5B5'}}">
+        登录
+      </view>
+    </view>
+  </view>
+</view>

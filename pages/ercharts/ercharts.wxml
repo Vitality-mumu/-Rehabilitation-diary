@@ -1,0 +1,240 @@
+<view class="ercharts">
+ 
+    <view class="ercharts-content" style="margin-top:{{navBarHeight}}px">
+        <view class='index_tab' wx:if="{{sex==2}}">
+            <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+                <view class='nav {{item == active?"cur":""}}' wx:for="{{tabsList}}"  wx:key="index"  data-item="{{item}}"
+                bindtap='switchTap' data-index="{{index}}">
+                <view >{{item}}</view>
+                <span></span>
+                </view>
+            </scroll-view>
+        </view>
+
+        <view class='index_tab' wx:if="{{sex==1}}">
+            <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+                <view class='nav {{item == active?"cur":""}}' wx:for="{{tabsList2}}"  wx:key="index"  data-item="{{item}}"
+                bindtap='switchTap' data-index="{{index}}">
+                <view>{{item}}</view>
+                <span></span>
+                </view>
+            </scroll-view>
+        </view>
+        
+
+
+           <block wx:if="{{active=='体温记录'}}">
+                <view class="Statistics">
+                    <view class="Statistics-headers">
+                        <image src="../../assets/image/temp.png"></image>
+                        <view class="Statistics-header">体温测量次数</view>
+                        <view class="Statistics-count">
+                            <view class="count-res">
+                                {{data1.count}}
+                            </view>
+                            <view class="count-unit">
+                                次
+                            </view>
+                        </view>
+                    </view>
+
+                    <view class="Statistics-item">
+                        <view class="per">占比 {{data1.normal.rate}}</view>
+                        <image class="icon" src="../../assets/image/icon1.png"></image>
+                        <view class="Statistics-title">正常体温</view>
+                        <view class="Statistics-time">
+                            <view class="time"> {{data1.normal.times}}</view>
+                            <view class="Unit">次</view>
+                        </view>
+                    </view>
+                    <view class="Statistics-item">
+                        <image class="icon" src="../../assets/image/icon3.png"></image>
+                        <view class="Statistics-title">最低体温</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data1.min}}</view>
+                            <view class="Unit">°C</view>
+                        </view>
+                    </view>
+                     <view class="Statistics-item">
+                        <view class="per">占比{{data1.abnormal.rate}}</view>
+                        <image class="icon" src="../../assets/image/icon2.png"></image>
+                        <view class="Statistics-title">异常体温</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data1.abnormal.times}}</view>
+                            <view class="Unit">次</view>
+                        </view>
+                    </view>
+                    <view class="Statistics-item">
+                        <image class="icon" src="../../assets/image/icon4.png"></image>
+                        <view class="Statistics-title">最高体温</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data1.max}}</view>
+                            <view class="Unit">°C</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 体温记录表 -->
+                <view class="container" >
+                    <ec-canvas id="temperature"  canvas-id="temperature" ec="{{ temperature }}"></ec-canvas>
+                </view>
+            </block>
+
+            <block  wx:if="{{active=='血压记录'}}">
+                <view class="Statistics">
+                 <view class="Statistics-headers">
+                        <image src="../../assets/image/press.png" id="press"></image>
+                        <view class="Statistics-header"> 血压测量次数</view>
+                        <view class="Statistics-count">
+                            <view class="count-res">
+                                {{data2.count}}
+                            </view>
+                            <view class="count-unit">
+                                次
+                            </view>
+                        </view>
+                    </view>
+                    <view class="Statistics-item">
+                        <view class="per">占比{{data2.normal.rate}}</view>
+                        <image class="icon" src="../../assets/image/icon1.png"></image>
+                        <view class="Statistics-title">正常血压</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data2.normal.times}}</view>
+                            <view class="Unit">次</view>
+                        </view>
+                    </view>
+                   
+                    <view class="Statistics-item">
+                        <image class="icon" src="../../assets/image/icon3.png"></image>
+                        <view class="Statistics-title">最低血压</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data2.min}}</view>
+                            <view class="Unit">mmHg</view>
+                        </view>
+                    </view>
+                     <view class="Statistics-item">
+                        <view class="per">占比{{data2.abnormal.rate}}</view>
+                        <image class="icon" src="../../assets/image/icon2.png"></image>
+                        <view class="Statistics-title">异常血压</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data2.abnormal.times}}</view>
+                            <view class="Unit">次</view>
+                        </view>
+                    </view>
+                    <view class="Statistics-item">
+                        <image class="icon" src="../../assets/image/icon4.png"></image>
+                        <view class="Statistics-title">最高血压</view>
+                        <view class="Statistics-time">
+                            <view class="time">{{data2.max}}</view>
+                            <view class="Unit">mmHg</view>
+                        </view>
+                    </view>
+
+                </view>
+                <!-- 血压记录表 -->
+                <view class="container" wx:if="{{ active === '血压记录' }}">
+                    <!-- force-use-old-canvas="true" -->
+                    <ec-canvas id="blood"  canvas-id="blood" ec="{{ blood }}"></ec-canvas>
+                </view>
+            </block>
+            <block  wx:if="{{active=='心率记录'}}">
+                        <view class="Statistics">
+
+                        <view class="Statistics-headers">
+                                <image src="../../assets/image/hreat.png" id="hreat"></image>
+                                <view class="Statistics-header"> 心率测量次数</view>
+                                <view class="Statistics-count">
+                                    <view class="count-res">
+                                     {{data3.count}}
+                                    </view>
+                                    <view class="count-unit">
+                                        次
+                                    </view>
+                                </view>
+                            </view>
+
+                            <view class="Statistics-item">
+                                <view class="per">占比{{data3.normal.rate}}</view>
+                                <image class="icon" src="../../assets/image/icon1.png"></image>
+                                <view class="Statistics-title">正常心率</view>
+                                <view class="Statistics-time">
+                                    <view class="time"> {{data3.normal.times}}</view>
+                                    <view class="Unit">次</view>
+                                </view>
+                            </view>
+                          
+                            
+                              <view class="Statistics-item">
+                                <image class="icon" src="../../assets/image/icon2.png"></image>
+                                <view class="Statistics-title">最高心率</view>
+                                <view class="Statistics-time">
+                                    <view class="time"> {{data3.max}}</view>
+                                    <view class="Unit">BPM</view>
+                                </view>
+                            </view>
+                            <view class="Statistics-item">
+                                <view class="per">占比{{data3.abnormal.rate}}</view>
+                                <image class="icon" src="../../assets/image/icon3.png"></image>
+                                <view class="Statistics-title">异常心率</view>
+                                <view class="Statistics-time">
+                                    <view class="time">{{data3.abnormal.times}}</view>
+                                    <view class="Unit">次</view>
+                                </view>
+                            </view>
+                            <view class="Statistics-item">
+                                <image class="icon" src="../../assets/image/icon4.png"></image>
+                                <view class="Statistics-title">最低心率</view>
+                                <view class="Statistics-time">
+                                    <view class="time">{{data3.min}}</view>
+                                    <view class="Unit">BPM</view>
+                                </view>
+                            </view>
+
+                        </view>
+                        <!-- 心率记录  -->
+                        <view class="container"  wx:if="{{ active === '心率记录' }}">
+                            <!-- force-use-old-canvas="true" -->
+                            <ec-canvas id="heartRate" canvas-id="heartRate" ec="{{ heartRate }}"></ec-canvas>
+                        </view>
+
+                </block>
+
+            
+            <block  wx:if="{{active=='体重记录'}}">
+                <!-- 体重记录 -->
+                <view class="container2" wx:if="{{ active === '体重记录' }}">
+                    <!-- force-use-old-canvas="true" -->
+                    <ec-canvas id="weight"  canvas-id="weight" ec="{{ weight }}"></ec-canvas>
+                </view>
+            </block>
+            <block  wx:if="{{active ==='睡眠记录'}}">
+                <!-- 睡眠记录 -->
+                <view class="container2" wx:if="{{ active === '睡眠记录' }}">
+                    <!-- force-use-old-canvas="true" -->
+                    <ec-canvas id="sleep"  canvas-id="sleep" ec="{{ sleep }}"></ec-canvas>
+                </view>
+            </block> 
+            <block  wx:if="{{active ==='月经记录'}}">
+                <view class="record-date">
+                <view class="date-title">日期筛选</view>
+                <view class="date-time">
+                     <van-dropdown-menu active-color="#386CE2">
+                            <van-dropdown-item value="{{ menstruationYear }}" options="{{ timeList }}"  bind:change="onChangeDate" bind:open="onOpenClick"
+                            bind:close="onCloseClick" 
+                             />
+                    </van-dropdown-menu>
+                </view>
+                </view>
+                <view class="container3" wx:if="{{ active === '月经记录' && dropdownStatus }}">
+                    <!-- force-use-old-canvas="true" -->
+                        <ec-canvas id="menstruation"   canvas-id="menstruation" ec="{{ menstruation }}"></ec-canvas>
+               </view>
+            </block> 
+    </view>
+  
+    
+
+
+
+
+</view>
+<nav-bar show-back="{{backstatus}}" id="nav" page-name="{{Title}}" bgc="#386CE2"></nav-bar>

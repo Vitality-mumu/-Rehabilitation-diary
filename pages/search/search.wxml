@@ -1,0 +1,58 @@
+<view class="search">
+    <nav-bar show-back="{{backstatus}}" page-name="{{title}}" bgc="#386CE2"></nav-bar>
+    <view class="search-content" style="margin-top:{{navBarHeight}}px">
+        <!-- 搜索框 -->
+        <view class="search-div">
+            <view class="input" bind:tap="onGoSearch">
+                <image src="../../assets/image/search.png"></image>
+                <van-field class="input-class" value="{{ value }}" placeholder="搜索请输入患者名称" border="{{ false }}"
+                    bind:input="onChangeClick" bind:confirm="onConfirmClick" bind:focus="onFocusClick" />
+            </view>
+            <text class="cancel" bind:tap="onCancelClick">{{searchTxt}}</text>
+        </view>
+        <view class="history" wx:if="{{!resStatus}}">
+            <block wx:if="{{historyList.length!=0}}">
+                <view class="history-title">最近搜索</view>
+                <view class="history-list">
+                    <block wx:for="{{historyList}}" wx:key="index">
+                        <view class="history-item" bind:tap="onHistoryClick" data-item="{{item}}">
+                            {{item}}
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <block wx:if="{{resStatus}}">
+            <view class="yes" wx:if="{{resList.length!=0}}">
+                <view class="yes-item" wx:for="{{resList}}" wx:key="index" bind:tap="onGoRecord" data-index="{{item.id}} ">
+
+                    <image wx-if="{{item.avatar}}" src="{{item.avatar}}"></image>
+                    <image wx-if="{{!item.avatar}}" src="{{ item.gender==2 ? '../../assets/image/common-girl.png' : '../../assets/image/common-boy.png' }}"></image>
+
+                    <view class="yes-center">
+                        <view class="center-top">{{item.username}}</view>
+                        <view class="center-center">
+                            <view class="sex">
+                                <image
+                                    src="{{item.gender==2 ? '../../assets/image/girl.png' : '../../assets/image/boy.png' }}">
+                                </image>
+                            </view>
+                            <view class="year">{{item.age}}</view>
+                        </view>
+                        <view class="center-bottom" wx-if="{{item.cancer}}">{{item.cancer}}</view>
+                    </view>
+                    <view class="yes-end">
+                        <view class="end-top">
+                            <image wx-if="{{item.record == true}}" src="../../assets/image/true.png"></image>
+                            <image wx-if="{{item.record == false}}" src="../../assets/image/false.png"></image>
+                        </view>
+                       
+                    </view>
+                </view>
+            </view>
+            <view class="no" wx:if="{{resList.length==0}}">
+                <image src="../../assets/image/no.png"></image>
+            </view>
+        </block>
+    </view>
+</view>

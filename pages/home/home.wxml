@@ -1,0 +1,48 @@
+<view class="home">
+    <nav-bar show-back="{{backstatus}}" page-name="{{title}}" bgc="#386CE2"></nav-bar>
+    <view class="home-content" style="margin-top:{{navBarHeight-1}}px">
+        <!-- 搜索框 -->
+        <view class="home-search">
+            <view class="input" bind:tap="onGoSearch">
+                <image src="../../assets/image/search.png"></image>
+                <view class="txt">搜索请输入患者名称</view>
+            </view>
+        </view>
+        <view class="info">
+            <!-- 没有数据 -->
+            <view class="no" wx-if="{{list.length==0}}">
+                <image src="../../assets/image/no.png"></image>
+                <view class="no-border" bind:tap="onAdd">添加患者信息</view>
+            </view>
+            <!-- 有数据 -->
+            <view class="yes" wx-if="{{list.length!=0}}">
+                <view class="yes-item" wx:for="{{list}}" wx:key="index" bind:tap="onGoRecord" data-index="{{index}} " >
+                    <block >
+                        <image wx-if="{{item.avatar}}" src="{{item.avatar}}"></image>
+                        <image wx-if="{{!item.avatar}}" src="{{ item.gender==2 ? '../../assets/image/common-girl.png' : '../../assets/image/common-boy.png' }}"></image>
+                        
+                        <view class="yes-center" >
+                            <view class="center-top">{{item.username}}</view>
+                            <view class="center-center">
+                                <view class="sex">
+                                    <image
+                                        src="{{item.gender==2 ? '../../assets/image/girl.png' : '../../assets/image/boy.png' }}">
+                                    </image>
+                                </view>
+                                <view class="year">{{item.age}}</view>
+                            </view>
+                            <view class="center-bottom" wx-if="{{item.cancer}}">{{item.cancer}}</view>
+                        </view>
+                        <view class="yes-end">
+                            <view class="end-top">
+                                <image wx-if="{{item.record == true}}" src="../../assets/image/true.png"></image>
+                                <image wx-if="{{item.record == false}}" src="../../assets/image/false.png"></image>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+
+            </view>
+        </view>
+    </view>
+</view>

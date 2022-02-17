@@ -1,0 +1,19 @@
+{
+  "name": "tempearture",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.9.1",
+    "regenerator": "^0.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/nini17/temperature-test-applet.git"
+  },
+  "description": ""
+}

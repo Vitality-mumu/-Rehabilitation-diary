@@ -1,0 +1,394 @@
+<view class="record {{scrollable ? '' : 'no-scroll'}}">
+    <nav-bar show-back="{{backstatus}}" page-name="{{Title}}" bgc="#386CE2"></nav-bar>
+    <view class="record-content" style="margin-top:{{navBarHeight}}px">
+        <!-- 个人信息 -->
+        <view class="record-info">
+            <view class="info-top">
+                <view class="info-header">
+                    <image wx-if="{{userData.avatar}}" src="{{'http://wanbei.site/'+userData.avatar}}"></image>
+                    <image wx-if="{{!userData.avatar}}" src="{{ userData.gender==2 ? '../../assets/image/common-girl.png' : '../../assets/image/common-boy.png' }}"></image>
+                </view>
+                <view class="info-content">
+                    <view class="center-top" wx-if="{{userData.username}}">{{userData.username}}</view>
+                    <view class="center-center">
+                        <view class="sex">
+                            <image src="../../assets/image/boy.png"  wx-if="{{userData.gender==1}}" alt="" />
+                            <image src="../../assets/image/girl.png"   wx-if="{{userData.gender==2}}" alt="" />
+                        </view>
+                        <view class="year"  wx-if="{{userData.age}}">{{userData.age}}</view>
+                    </view>
+                    <view class="center-bottom" wx-if="{{userData.cancer}}">{{userData.cancer}}</view>
+                </view>
+                <image src="../../assets/image/record-btn.png" class="ercharts-btn"   bindtap="onErchartsClick"></image>
+            </view>
+            <view class="info-bottom">
+                <view class="id" wx-if="{{userData.id_card}}">身份证号：{{userData.id_card}}</view>
+                <view class="info-end" wx-if="{{userData.join_date}}">
+                    入园时间 / {{userData.join_date}}
+                </view>
+            </view>
+        </view>
+        <!-- 记录日期 -->
+        <view class="record-date">
+            <view class="date-title">记录日期</view>
+            <view class="date-time">
+                <van-dropdown-menu active-color="#386CE2" >
+                    <van-dropdown-item value="{{ date }}" options="{{ timeList }}" popup-style="height:30vh;"
+                        close-on-click-outside="{{true}}"
+                        bind:change="onChangeDate"
+                        bind:open="onOpenDropdown"
+                        bind:close="onCloseDropdown"
+                    />
+                </van-dropdown-menu>
+            </view>
+        </view>
+        <!-- 检测结果 -->
+        <view class="record-list">
+            <!-- 体温记录 -->
+            <view class="temperature">
+                <view class="common">
+                    <view class="temperature-flag">体温记录</view>
+                    <image class="record-btn" src="../../assets/image/record.png"
+                        bind:tap="onAddClick"
+                        wx:if="{{currentDate == date }}"
+                        ></image>
+
+                </view>
+                <block wx-if="{{data.temperature.recentRecordTime}}">
+                    
+                        <view class="temperature-time"  >最新记录时间：{{data.temperature.recentRecordTime}}</view>
+                        <view class="sum" >
+                            <view class="sum-item">体温测量次数
+                                <view class="sum-value">{{data.temperature.recordTimes}}</view>
+                               (次)   
+                            </view>
+                            <view class="sum-item second" >最后一次体温
+                                <view class="sum-value">{{data.temperature.recentRecordTemperature}}</view>
+                                °C  
+                            </view>
+
+                        </view>
+                        <!-- 正常体温...最高体温 -->
+                        <view class="temperature-list1 ">
+                            <view class="list1-item" >
+                                <view class="list1-title">正常体温</view>
+                                <view class="list1-value green" >{{data.temperature.normalTimes}}次</view>
+                            </view>
+                            <view class="list1-item" >
+                                <view class="list1-title">异常体温</view>
+                                <view class="list1-value red">{{data.temperature.abnormalTimes}}次</view>
+                            </view>
+                            <view class="list1-item" >
+                                <view class="list1-title">最低体温</view>
+                                <view class="list1-value green">{{data.temperature.minTemperature}}°c</view>
+                            </view>
+                            <view class="list1-item" >
+                                <view class="list1-title">最高体温</view>
+                                <view class="list1-value red">{{data.temperature.maxTemperature}}°c</view>
+                            </view>
+                        </view>
+
+                        <view class="hr"></view>
+
+                        <!-- 记录时间 -->
+                        <view class="recordTime" >
+                            <view class="recordTime-title">记录时间</view>
+                            <view class="recordTime-content" >
+                                <view class="recordTime-item" wx:for="{{data.temperature.temperature}}" wx:key="index">
+                                    <view class="recordTime-time ">
+                                        {{item.date}}
+                                    </view>
+                                    <view class="recordTime-temperature  {{ item.temperature>=37.5?'red':'green' }} "   >
+                                        {{item.temperature}}°c
+                                    </view>
+
+                                </view>
+                            </view>
+                        </view>
+                </block>
+               
+            </view>
+            <view class="allRecordList">
+                <!-- 血压记录 -->
+                <view class="allRecord" >
+                    <view class="common">
+                        <view class="temperature-flag">血压记录</view>
+                        <image class="record-btn" src="../../assets/image/record.png"
+                        bindtap="onPressureShow"
+                        wx:if="{{currentDate == date }}"
+                        ></image>
+                    </view>
+
+                    <block wx:if="{{data.pressure.systolicPressure && data.pressure.diastolicPressure}}">
+                   
+                    <view class="allRecord-time" >最新记录时间：{{data.pressure.recentRecordTime}}</view>
+                    <view class="allRecord-common">
+                        <view class="allRecord-item" >
+                            <view class="allRecord-item-title">收缩压:</view>
+                            <view class="allRecord-item-value {{ data.pressure.systolicPressure>=90 && data.pressure.systolicPressure<=140?'green':'red' }}"   >
+                                {{data.pressure.systolicPressure}}
+                            </view>
+                            <view class="DW {{ data.pressure.systolicPressure>=90 && data.pressure.systolicPressure<=140?'green':'red' }}">(mmHg)</view>
+                            
+                        </view>
+                        <view class="allRecord-item" >
+                            <view class="allRecord-item-title">舒张压:</view>
+                            <view class="allRecord-item-value {{ data.pressure.diastolicPressure>=60 && data.pressure.diastolicPressure<=90?'green':'red' }}" >
+                                {{data.pressure.diastolicPressure}}
+                            </view>
+                            <view class="DW {{ data.pressure.diastolicPressure>=60 && data.pressure.diastolicPressure<=90?'green':'red' }}">(mmHg)</view>
+                        </view>
+
+                    </view>
+                    </block>
+                </view>
+                <!-- 心率记录 -->
+                <view class="allRecord" >
+                    <view class="common">
+                        <view class="temperature-flag">心率记录</view>
+                        <image class="record-btn" src="../../assets/image/record.png"
+                        bindtap="onHeartrateShow"
+                        wx:if="{{currentDate == date  }}"
+                        ></image>
+                    </view>
+                    <block wx:if="{{data.heart_rate.val && data.heart_rate.recentRecordTime }}">
+                    <view class="allRecord-time" >最新记录时间：{{data.heart_rate.recentRecordTime}}</view>
+                    <view class="allRecord-common">
+                        <view class="allRecord-item">
+                            <view class="allRecord-item-title ">心率:</view>
+                            <view class="allRecord-item-value  {{ data.heart_rate.val>=60 && data.heart_rate.val<=100?'green':'red' }}">
+                                {{ data.heart_rate.val}}
+                            </view>
+                            <view class="DW {{ data.heart_rate.val>=60 && data.heart_rate.val<=100?'green':'red' }}"> (BPM)</view>
+
+                        </view>
+                    </view>
+
+                   </block>
+
+                </view>
+                <!-- 月经记录 -->
+                <view class="allRecord" wx-if="{{userData.gender==2 }}">
+                    <view class="common">
+                        <view class="temperature-flag">月经记录</view>
+                        <view class="menses-btn" wx:if="{{currentDate == date}}">
+                            <view class="start-btn btn {{ mensesStatus==1 ?'grey':'' }}"
+                            bindtap="onStartClick"
+                            >开始</view>
+                            <view class="end-btn btn {{ mensesStatus==0 ?'grey':'' }}"
+                            bindtap="onEndClick"
+                            >结束</view>
+                        </view>
+                    </view>
+                    <block  wx:if="{{data.menses}}" wx-if="{{data.menses.recentRecordTime}}">
+                        <view class="allRecord-time" >最新记录时间：{{data.menses.recentRecordTime}}</view>
+                        <view class="allRecord-common">
+                            <view class="allRecord-item"  wx-if="{{data.menses.startTime}}">
+                                <view class="allRecord-item-title ">开始时间:</view>
+                                <view class="allRecord-item-value">
+                                    {{data.menses.startTime}}
+                                </view>
+                            </view>
+                            <view class="allRecord-item"  wx-if="{{data.menses.endTime}}">
+                                <view class="allRecord-item-title ">结束时间:</view>
+                                <view class="allRecord-item-value">
+                                    {{data.menses.endTime}}
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+                <!-- 体重记录 -->
+                <view class="allRecord" >
+                    <view class="common">
+                        <view class="temperature-flag">体重记录</view>
+                        <image class="record-btn"
+                        wx:if="{{ currentDate == date }}"
+                        src="../../assets/image/record.png" bind:tap="onWeightShow" ></image>
+                    </view>
+                    <block wx-if="{{data.weight.recentRecordTime}}">
+                    <view class="allRecord-time">最新记录时间：{{data.weight.recentRecordTime}}</view>
+                    <view class="allRecord-common">
+                        <view class="allRecord-item">
+                            <view class="allRecord-item-title ">体重:</view>
+                            <view class="allRecord-item-value">
+                                {{ data.weight.val}}
+                                
+                            </view>
+                            <view class="DW blue"> （kg）</view>
+                            
+
+                        </view>
+                    </view>
+                </block>
+                </view>
+                <!-- 睡眠记录 -->
+                <view class="allRecord"  >
+                    <view class="common">
+                        <view class="temperature-flag">睡眠记录</view>
+                        <image  class="record-btn" 
+                        wx:if="{{  currentDate == date}}"
+
+                        bindtap="onSleepShow"
+                        src="../../assets/image/record.png"></image>
+                    </view>
+                    <block wx:if="{{data.sleep }}" wx-if="{{data.sleep.recentRecordTime}}">
+                    <view class="allRecord-time">最新记录时间：{{data.sleep.recentRecordTime}}</view>
+                    <view class="sleep">
+                        <view class="sleep-item">
+                            <view class="item-title">入睡时间</view>
+                            <view class="item-times">{{data.sleep.sleepTime}}</view>
+                        </view>
+                        <view class="sleep-item">
+                            <view class="item-title">起床时间</view>
+                            <view class="item-times">
+                                {{data.sleep.wakeTime}}</view>
+
+                        </view>
+                        <view class="sleep-item">
+                            <view class="item-title">睡眠时间</view>
+                            <view class="item-times">{{
+                                data.sleep.sleepDuration
+                                }}</view>
+                        </view>
+                        <view class="sleep-item">
+                            <view class="item-title">夜醒次数</view>
+                            <view class="item-times">{{data.sleep.wakeUpTimes}}次</view>
+                        </view>
+                    </view>
+                </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 体温 -->
+    <van-overlay show="{{ temperatureShow }}">
+        <view class="wrapper">
+            <view class="noop">
+                <view class="noop-title">体温记录</view>
+                <view class="noop-input">
+                     <input type="digit" placeholder="请输入温度值" value="{{temperature}}" bindinput="onInputChange" />
+                     
+
+
+
+                    <view class="dw">°c</view>
+                
+                </view>
+                <view class="noop-btn">
+                    <view class="cancel" bind:tap="onCancelClick">取消</view>
+                    <view class="ok" bind:tap="onOkClick">确认</view>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+    <!-- 血压 -->
+    <van-overlay show="{{ pressureShow }}">
+        <view class="wrapper">
+            <view class="noop2">
+                <view class="noop-title">血压记录</view>
+                <view class="pressure-title">收缩压</view>
+                <view class="noop-input">
+
+                     <input type="number" placeholder="请输入收缩压值" value="{{systolicPressure}}" bindinput="onSystolicPressureChange" />
+
+
+                    <view class="dw">mmHg</view>
+                </view>
+                <view class="pressure-title">舒张压</view>
+                <view class="noop-input">
+
+                     <input type="number" placeholder="请输入舒张压值" value="{{diastolicPressure}}" bindinput="onDiastolicPressureChange" />
+
+
+                    <view class="dw">mmHg</view>
+                </view>
+                <view class="noop-btn">
+                    <view class="cancel" bind:tap="onPressureCancel">取消</view>
+                    <view class="ok" bind:tap="onPressureOk">确认</view>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+    <!-- 心率 -->
+    <van-overlay show="{{ heartrateShow }}">
+        <view class="wrapper">
+            <view class="noop">
+                <view class="noop-title">心率记录</view>
+                <view class="noop-input">
+
+                     <input type="number" placeholder="请输入心率值" value="{{heartrate}}" bindinput="onHeartrateChange" />
+
+
+
+                    <view class="dw">BPM</view>
+                
+                </view>
+                <view class="noop-btn">
+                    <view class="cancel" bind:tap="onHeartrateCancel">取消</view>
+                    <view class="ok" bind:tap="onHeartrateOk">确认</view>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+    <!-- 体重 -->
+    <van-overlay show="{{ weightShow }}">
+        <view class="wrapper">
+            <view class="noop">
+                <view class="noop-title">体重记录</view>
+                <view class="noop-input">
+
+                     <input type="digit" placeholder="请输入体重值" value="{{weight}}" bindinput="onWeightChange" />
+
+                    <view class="dw">kg</view>
+                
+                </view>
+                <view class="noop-btn">
+                    <view class="cancel" bind:tap="onWeightCancel">取消</view>
+                    <view class="ok" bind:tap="onWeightOk">确认</view>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+    <!-- 睡眠  -->
+    <van-overlay show="{{ sleepShow }}">
+        <view class="wrapper">
+            <view class="noop3">
+                <view class="noop-title">睡眠记录</view>
+                <view class="pressure-title">入睡时间</view>
+                <view class="noop-input">
+                    <van-cell border="{{false}}" title="{{title1}}" value="{{ sleepTime }}" bind:tap="onDisplay1" />
+                </view>
+                <view class="pressure-title">起床时间</view>
+                <view class="noop-input">
+                    <van-cell border="{{false}}" title="{{title2}}" value="{{ wakeTime }}" bind:tap="onDisplay2" />
+                </view>
+
+                <view class="pressure-title">夜醒次数</view>
+                <view class="noop-input">
+
+                     <input type="number" placeholder="请输入夜醒次数" value="{{wakeUpTimes}}" bindinput="onwakeUpTimesChange" />
+
+                </view>
+            
+
+                <view class="noop-btn">
+                    <view class="cancel" bind:tap="onsleepCancel">取消</view>
+                    <view class="ok" bind:tap="onsleepOk">确认</view>
+                </view>
+            </view>
+        </view>
+    </van-overlay>
+
+
+
+    <!-- 选择器 -->
+    <van-popup show="{{ timePicker1 }}" bind:close="ontimePicker1Close" position="bottom">
+        <van-datetime-picker type="time" value="{{ currentDate1 }}" bind:input="onInput" bind:confirm="onConfirm1Time" bind:cancel="onCancel1Time" />
+    </van-popup>
+    <van-popup show="{{ timePicker2 }}" bind:close="ontimePicker2Close" position="bottom">
+        <van-datetime-picker type="time" value="{{ currentDate2 }}" bind:input="onInput"  bind:confirm="onConfirm2Time" bind:cancel="onCancel2Time" />
+    </van-popup>
+    <van-toast id="van-toast" />
+
+</view>

@@ -1,0 +1,40 @@
+{
+  "pages":[
+   "pages/login/login",
+   "pages/home/home",
+   "pages/search/search",
+   "pages/record/record",
+   "pages/ercharts/ercharts",
+   "pages/mine/mine",
+   "pages/webview/index"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+  "usingComponents": {
+    "nav-bar": "/component/navBar/navBar"
+  },
+  "tabBar": {
+    "color": "#595757",
+    "selectedColor": "#43A4EB",
+    "backgroundColor": "#fff",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "患者列表",
+        "iconPath": "assets/image/homeIcon.png",
+        "selectedIconPath": "assets/image/blue-homeIcon.png"
+      }, {
+        "pagePath": "pages/mine/mine",
+        "text": "添加患者",
+        "iconPath": "assets/image/mineIcon.png",
+        "selectedIconPath": "assets/image/blue-mineIcon.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

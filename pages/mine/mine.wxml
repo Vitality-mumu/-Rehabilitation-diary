@@ -1,0 +1,73 @@
+<view class="mine">
+    <nav-bar show-back="{{backstatus}}" page-name="{{Title}}" bgc="#386CE2"></nav-bar>
+    <view class="mine-content" style="margin-top:{{navBarHeight}}px">
+        <view class="info">
+            <view class="common">
+                <view class="common-title">上传头像</view>
+                <image  class="aver" bindtap="onChangeImg" src="{{imgSrc}}" /> 
+
+            </view>
+            <view class="common">
+                <view class="common-title">姓名</view>
+                <van-field border="{{false}}" value="{{ name }}" placeholder="请输入患者姓名" bind:change="onNameChange" />
+            </view>
+            <view class="common">
+                <view class="common-title">年龄</view>
+                <van-field border="{{false}}" value="{{ age }}" placeholder="请输入患者年龄" bind:change="onAgeChange" />
+            </view>
+            <view class="common">
+                <!-- 单选框 -->
+                <van-radio-group value="{{ radio }}" bind:change="onChange" direction="horizontal">
+                    <van-radio use-icon-slot value="{{ radio }}" name="1" label-position="left" class="radio-txt">
+                        男
+                        <image slot="icon" src="{{ radio === '1' ? icon.active : icon.normal }}" />
+                    </van-radio>
+                    <van-radio use-icon-slot value="{{ radio }}" name="2" label-position="left" class="radio-txt">
+                        女
+                        <image slot="icon" src="{{ radio === '2' ? icon.active : icon.normal }}" />
+                    </van-radio>
+                </van-radio-group>
+
+            </view>
+            <view class="common">
+                <view class="common-title">身份证号</view>
+                <van-field border="{{false}}" value="{{ Id }}" placeholder="请输入身份证号" bind:change="onIdChange" />
+            </view>
+
+            <view class="common">
+                <view class="common-title">手机号</view>
+                <van-field border="{{false}}" value="{{ phone }}" placeholder="请输入手机号" bind:change="onPhoneChange" />
+
+            </view>
+
+
+            <view class="common">
+                <view class="common-title">入院时间</view>
+                <van-cell border="{{false}}" title="{{title}}" value="{{ date }}" bind:tap="onDisplay" />
+                <image src="../../assets/image/calendar.png" bind:tap="onDisplay" class="calendar"></image>
+
+
+            </view>
+            <view class="common">
+                <view class="common-title">病症</view>
+                <van-field border="{{false}}" value="{{ cancer }}" placeholder="请输入患者病症" bind:change="onCancerChange" />
+            </view>
+
+            <view class="info-btn" style="background:{{ date&&name&&age&&Id ? '#386CE2':'#B5B5B5'  }}  "
+                bindtap="onPostClick">确认</view>
+        </view>
+
+
+    </view>
+
+
+    <van-toast id="van-toast" />
+
+    <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+        <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}"
+            max-date="{{ maxDate }}" bind:confirm="onConfirmTime" bind:cancel="onCancelTime" />
+    </van-popup>
+
+
+
+</view>

@@ -1,0 +1,17 @@
+
+
+
+<view class="nav" style=" height:{{navBarHeight}}px; background-color:{{bgc}} ">
+  <!-- 标题 -->
+  <view class="nav-content" style="margin-top:{{ navBarHeight-menuBotton-menuHeight}}px ; height:{{menuHeight}}px; ">
+  <view class="back" wx-if="{{showBack}}" bindtap="onBackClick">
+    <view class="backimg"  ></view>
+  </view>
+    <view class="title">{{pageName}}</view>
+  </view>
+</view>
+
+
+
+
+

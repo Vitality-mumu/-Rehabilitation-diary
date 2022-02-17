@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-field": "../../miniprogram_npm/@vant/weapp/field",
+    "van-cell":"../../miniprogram_npm/@vant/weapp/cell",
+    "van-cell-group":"../../miniprogram_npm/@vant/weapp/cell-group",
+    "van-radio":"../../miniprogram_npm/@vant/weapp/radio",
+    "van-radio-group":"../../miniprogram_npm/@vant/weapp/radio-group",
+    "van-datetime-picker":"../../miniprogram_npm/@vant/weapp/datetime-picker",
+    "van-popup":"../../miniprogram_npm/@vant/weapp/popup",
+    "van-calendar":"../../miniprogram_npm/@vant/weapp/calendar",
+    "van-toast":"../../miniprogram_npm/@vant/weapp/toast",
+    "van-datetime-picker":"../../miniprogram_npm/@vant/weapp/datetime-picker",
+    "van-popup":"../../miniprogram_npm/@vant/weapp/popup"
+
+   
+  }
+}

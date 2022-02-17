@@ -1,0 +1,787 @@
+.no-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+.record{
+    height: 100%;
+}
+
+.record-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F4F4FC;
+    min-height: 100%;
+    padding-bottom: 74rpx;
+}
+
+.tabs {
+    background: #FFFFFF;
+
+    width: 694rpx;
+    height: 98rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 28rpx;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #333333;
+}
+
+.record-info {
+    width: 694rpx;
+    height: 244rpx;
+    margin-top: 32rpx;
+    background: #FFFFFF;
+    padding-top: 32rpx;
+    padding-bottom: 34rpx;
+    border-radius: 10rpx;
+}
+
+.center-top {
+
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    margin-bottom: 8rpx;
+}
+
+.center-center {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 12rpx;
+
+}
+
+.sex>image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 22rpx;
+}
+
+.info-top,
+.info-bottom {
+    display: flex;
+}
+
+.info-bottom {
+    flex-direction: column;
+}
+
+.info-bottom {
+
+    margin: 20rpx 0 0 30rpx;
+}
+
+.info-header>image {
+    width: 124rpx;
+    height: 124rpx;
+    margin-left: 30rpx;
+    border-radius: 50%;
+}
+
+.info-content {
+    margin-left: 26rpx;
+}
+
+.year {
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.center-bottom {
+    font-size: 28rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.info-end {
+    font-size: 26rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 24rpx;
+}
+
+.info-bottom {
+    display: flex;
+    height: 52rpx;
+}
+
+.id {
+    font-size: 26rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.info-btn {
+    width: 164rpx;
+    height: 54rpx;
+    background: linear-gradient(91deg, #318CFF 0%, #0E56FF 100%);
+    border-radius: 26rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    line-height: 32rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 79rpx;
+    color: #FFFFFF;
+}
+
+.sjx {
+    width: 0;
+    height: 0;
+    border-right: 20rpx solid transparent;
+    border-left: 20rpx solid transparent;
+    border-top: 30rpx solid #386CE2;
+    margin-left: 34rpx;
+}
+
+.record-date {
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    background-color: #FFFFFF;
+    width: 694rpx;
+    height: 98rpx;
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #333333;
+
+}
+
+.date-title {
+    margin-left: 28rpx;
+}
+
+.date-time {
+    justify-content: flex-end;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50%;
+    margin-right: 24rpx;
+
+}
+
+.temperature{
+    padding-bottom: 20rpx;
+}
+
+.record-list {
+
+
+    margin-top: 20rpx;
+    width: 694rpx;
+}
+
+
+.temperature {
+    width: 694rpx;
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 20rpx;
+}
+
+.temperature-flag {
+
+    width: 200rpx;
+    height: 52rpx;
+    background: linear-gradient(91deg, #318CFF 0%, #0E56FF 100%);
+    border-radius: 0px 26rpx 26rpx 0px;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.temperature-time {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    /* font-weight: bold; */
+    line-height: 40rpx;
+    color: #333333;
+    opacity: 1;
+    margin-top: 38rpx;
+    margin-left: 30rpx;
+}
+
+.sum {
+
+    width: 646rpx;
+    height: 76rpx;
+    background: #F4F4FC;
+    border-radius: 6rpx;
+
+    margin-left: 30rpx;
+    margin-top: 34rpx;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.second {
+    margin-left: 98rpx !important;
+}
+
+.sum-item {
+    margin-left: 24rpx;
+    display: flex;
+    align-items: center;
+    /* margin-right: 40rpx; */
+    font-size: 12px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 40rpx;
+    color: #333333;
+
+
+}
+
+.dw {
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    color: #333333;
+}
+
+.sum-value {
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    margin-left: 16rpx;
+    margin-right: 5rpx;
+}
+
+.red {
+    color: #FE6058 !important;
+}
+
+.green {
+    color: #31A731 !important;
+}
+
+.temperature-list1 {
+    width: 646rpx;
+    margin-left: 30rpx;
+    margin-top: 28rpx;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.hr {
+    width: 624rpx;
+    height: 0px;
+    border: 2rpx solid #F4F4FC;
+    align-self: center;
+    margin-top: 34rpx;
+    margin-bottom: 24rpx;
+}
+
+.list1-item {
+    width: 148rpx;
+    height: 160rpx;
+    background: #F4F4FC;
+    border-radius: 6rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list1-title {
+    margin-top: 22rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #333333;
+}
+
+.list1-value {
+    margin-top: 34rpx;
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    /* margin-top: 12rpx; */
+
+}
+
+.recordTime {
+    margin-left: 30rpx;
+    width: 624rpx;
+}
+
+.recordTime-title {
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #333333;
+    margin-bottom: 28rpx;
+}
+
+.recordTime-content {
+    margin-top: 20rpx;
+    width: 664rpx;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.recordTime-item {
+    margin-bottom: 34rpx;
+    width: 108rpx;
+    margin-right: 59rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recordTime-time {
+    margin-bottom: 22rpx;
+    font-size: 28rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.recordTime-temperature {
+    font-size: 28rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    width: 108rpx;
+    height: 56rpx;
+    background: #F4F4FC;
+    border-radius: 6rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DW {
+    font-size: 28rpx !important;
+}
+
+.recordTime-btn {
+    width: 228rpx;
+    height: 60rpx;
+    background: linear-gradient(91deg, #318CFF 0%, #0E56FF 100%);
+    border-radius: 30rpx;
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 40rpx;
+}
+
+.allRecord {
+    width: 694rpx;
+    margin-bottom: 20rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    background-color: #FFFFFF;
+    border-radius: 10rpx;
+}
+
+
+.allRecord-title {
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #0E56FF;
+    margin-left: 30rpx;
+}
+
+.allRecord-time {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    /* font-weight: bold; */
+    color: #333333;
+    margin-top: 38rpx;
+    margin-left: 30rpx;
+}
+
+.allRecord-common {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 30rpx;
+}
+
+.allRecord-item {
+
+    display: flex;
+    align-items: center;
+    margin-right: 54rpx;
+}
+
+.allRecord-item-title {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    /* font-weight: bold; */
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.allRecord-item-value {
+    margin-left: 16rpx;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #0E56FF;
+
+}
+
+.blue {
+    font-family: PingFang SC;
+    line-height: 32rpx;
+    color: #0E56FF;
+}
+
+.food {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #666666;
+    margin-left: 30rpx;
+}
+
+.allRecordList {
+    margin-top: 20rpx;
+}
+
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+
+
+}
+
+.noop {
+    width: 548rpx;
+    height: 414rpx;
+    background: #FFFFFF;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noop-title {
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    color: #0E56FF;
+    margin-top: 52rpx;
+    margin-bottom: 20rpx;
+}
+
+.noop-input {
+    margin-top: 20rpx;
+    width: 462rpx;
+    height: 72rpx;
+    background: #EDEDED;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28rpx;
+
+}
+
+.noop-btn {
+    width: 462rpx;
+    margin-top: 28rpx;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.noop-btn>view {
+    border-radius: 100rpx;
+    width: 214rpx;
+    height: 68rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 9px;
+    color: #FFFFFF;
+}
+
+.cancel {
+    background: #B5B5B5;
+
+}
+
+.ok {
+    background: #386CE2;
+}
+
+input {
+    height: 100%;
+    width: 82%;
+    padding-left: 15rpx;
+    font-size: 28rpx;
+}
+
+.ercharts-btn {
+    width: 208rpx;
+    height: 52rpx;
+    margin-left: 190rpx;
+}
+
+.van-dropdown-menu {
+    box-shadow: none !important;
+}
+
+.yj {
+    display: flex;
+}
+
+.yj-right {
+    margin-left: 117rpx;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+
+.right-title {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 38rpx;
+}
+
+.right-time {
+
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 48rpx;
+    color: #0E56FF;
+    margin-top: 20rpx
+}
+
+.sleep {
+    margin-left: 30rpx;
+    display: flex;
+    width: 616rpx;
+    justify-content: space-between;
+    margin-top: 38rpx;
+}
+
+.sleep-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 6rpx;
+}
+
+.item-title {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #333333;
+}
+
+.item-times {
+    margin-top: 16rpx;
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    color: #0E56FF;
+}
+
+.sleep-desc {
+    margin-left: 30rpx;
+    margin-top: 26rpx;
+}
+
+.desc-title {
+    font-size: 28rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #000000;
+}
+
+.desc-content {
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    font-weight: bold;
+    line-height: 40rpx;
+    color: #666666;
+    margin-top: 24rpx;
+}
+
+.common {
+    display: flex;
+    justify-content: space-between;
+}
+
+.record-btn {
+    width: 138rpx;
+    height: 54rpx;
+    margin-right: 24rpx;
+
+}
+
+.menses-btn {
+    margin-right: 24rpx;
+    display: flex;
+
+}
+
+
+.btn {
+    width: 96rpx;
+    height: 54rpx;
+    border-radius: 26rpx;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family: PingFang SC;
+    font-weight: bold;
+    line-height: 32rpx;
+    margin-left: 8rpx;
+
+}
+
+.start-btn {
+
+    border: 2rpx solid #115AFF;
+    color: #115AFF;
+
+}
+
+.end-btn {
+
+    border: 2rpx solid #FE6058;
+    color: #FE6058;
+
+
+}
+
+.noop2 {
+    width: 600rpx;
+    height: 602rpx;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noop2 .noop-input {
+    margin-bottom: 40rpx;
+}
+
+.noop2 .pressure-title {
+    margin-top: 0rpx;
+
+}
+
+.noop3 {
+    width: 600rpx;
+    height: 770rpx;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noop2 .noop-input {
+    margin-top: 20rpx;
+}
+
+.van-cell {
+
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.pressure-title {
+    width: 462rpx;
+    margin-top: 40rpx;
+}
+
+.grey {
+    color: #999;
+    border: 4rpx solid #999;
+}
+
+.noop3 .noop-input {
+    margin-top: 32rpx;
+}
+
+.noop3 .pressure-title {
+    /* margin-top: 28rpx; */
+    margin-top: 0rpx;
+    font-size: 28rpx;
+
+}
+
+.dw {
+    font-size: 28rpx;
+    margin-right: 24rpx;
+}
+.date-time>image{
+    margin-left: 20rpx;
+    width: 24rpx;
+    height: 24rpx;
+
+}

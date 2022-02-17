@@ -1,0 +1,240 @@
+.ercharts {
+  background-color: #f4f4fc;
+  min-height: 100%;
+  overflow: overlay;
+}
+
+.container {
+  width: 694rpx;
+  height: 1020rpx;
+  align-self: center;
+  border-radius:10rpx ;
+}
+
+.container2 {
+  border-radius:10rpx ;
+  margin-top: 20rpx;
+  width: 694rpx;
+  height:  1200rpx;
+  align-self: center;
+}
+
+.container3 {
+  border-radius:10rpx ;
+  margin-top: 20rpx;
+  width: 694rpx;
+  height: 1200rpx;
+  align-self: center;
+}
+
+.ercharts-content {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow:hidden
+}
+
+van-tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Statistics {
+  width: 694rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 24rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+
+.Statistics-item {
+  width: 336rpx;
+  height: 104rpx;
+  background: #ffffff;
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.Statistics-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.Statistics-title {
+  flex: 1;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+  margin-left: 10rpx;
+}
+
+.time {
+  flex: 1;
+  font-size: 48rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 32rpx;
+  color: #333333;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Unit {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  line-height: 32rpx;
+  color: #333333;
+  margin-left: 10rpx;
+  margin-right: 6rpx;
+}
+.Statistics-item {
+  position: relative;
+}
+.per {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 108rpx;
+  height: 26rpx;
+  background-color: #31a731;
+  font-size: 16rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 0 10rpx 0 10rpx;
+}
+.Statistics-headers {
+  width: 694rpx;
+  height: 104rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Statistics-headers > image {
+  width: 28rpx;
+  height: 60rpx;
+  margin-left: 32rpx;
+}
+
+.Statistics-header {
+  margin-left: 32rpx;
+  font-size: 28rpx;
+  font-family: Source Han Sans CN;
+  font-weight: bold;
+  line-height: 40rpx;
+  color: #333333;
+}
+.Statistics-count {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 32rpx;
+}
+.count-res {
+  font-size: 48rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 32rpx;
+  color: #333333;
+  margin-right: 22rpx;
+}
+#press {
+  width: 48rpx;
+  height: 48rpx;
+}
+#hreat {
+  width: 46rpx;
+  height: 44rpx;
+}
+
+.record-date {
+  margin-top: 20rpx;
+  background-color: #ffffff;
+  width: 694rpx;
+  height: 98rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  line-height: 32rpx;
+  color: #333333;
+  /* justify-content:space-between; */
+}
+
+.date-title {
+  margin-left: 28rpx;
+}
+
+.date-time {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 39rpx;
+  flex: 1;
+  justify-content: flex-end;
+  height: 80%;
+}
+.van-dropdown-menu {
+  box-shadow: none !important;
+}
+
+.index_tab .bottom_scroll {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 83rpx;
+}
+.index_tab .bottom_scroll .nav {
+  width: 20%;
+  display: inline-block;
+  white-space: normal;
+  text-align: center;
+  color: #6f7580;
+  font-size: 30rpx;
+  position: relative;
+}
+.index_tab .cur {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+.index_tab .cur span {
+  width: 50rpx;
+  height: 8rpx;
+  border-radius: 5rpx;
+  background: #F98E0E;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.index_tab{
+  width: 100%;
+}

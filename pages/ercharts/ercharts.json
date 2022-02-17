@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../miniprogram_npm/ec-canvas/ec-canvas",
+    "van-tab": "../../miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "../../miniprogram_npm/@vant/weapp/tabs/index",
+    "van-dropdown-menu": "../../miniprogram_npm/@vant/weapp/dropdown-menu",
+    "van-dropdown-item": "../../miniprogram_npm/@vant/weapp/dropdown-item",
+    "nav-bar":"../../component/navBar/navBar"
+
+  }
+}

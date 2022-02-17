@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-field":"../../miniprogram_npm/@vant/weapp/field",
+    "van-cell-group":"../../miniprogram_npm/@vant/weapp/cell-group",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index"
+  }
+}

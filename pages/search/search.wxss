@@ -1,0 +1,232 @@
+.search {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F4F4FC;
+}
+
+.search-content {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.search-div {
+    position: fixed;
+    width: 100%;
+    height: 136rpx;
+    background-color: #386CE2;
+    border-radius: 0px 0px 40rpx 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-div>.input {
+    width: 592rpx;
+    height: 80rpx;
+    background: #FFFFFF;
+    opacity: 1;
+    border-radius: 48rpx;
+    display: flex;
+    align-items: center;
+}
+
+.input>image {
+    width: 34rpx;
+    height: 34rpx;
+    margin-left: 26rpx;
+}
+
+.txt {
+    margin-left: 42rpx;
+    font-size: 14px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #999999;
+}
+
+.cancel {
+    margin-left: 22rpx;
+    font-size: 32rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.history {
+    margin-top: 156rpx;
+    margin-left: 28rpx;
+}
+
+.history-title {
+    font-size: 32rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #333333;
+}
+
+.history-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20rpx;
+}
+
+.history-item {
+    letter-spacing: 3rpx;
+    width: 112rpx;
+    height: 44rpx;
+    margin-bottom: 10rpx;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-right: 32rpx;
+    background: linear-gradient(91deg, #318CFF 0%, #0E56FF 100%);
+    opacity: 1;
+    border-radius: 50px;
+
+    font-size: 12px;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.van-cell{
+
+    background-color: rgb(0, 0, 0,0) !important;
+}
+.input-class{
+    flex: 1;
+}
+.yes,.no{
+    margin-top: 156rpx;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.yes-item{
+    background: #FFFFFF;
+    position: relative;
+    width: 694rpx;
+    height: 184rpx;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 20rpx;
+}
+.yes-item>image{
+   width: 124rpx;
+   height: 124rpx; 
+   margin-left: 30rpx;
+   border-radius:50%;
+}
+
+.yes-center{
+    flex:1;
+    margin-left: 26rpx;
+
+}
+
+.center-center{
+    display: flex;
+
+}
+.sex>image{
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 22rpx;
+}
+
+
+
+
+.end-top,.end-bottom{
+   
+    text-align: right;
+}
+
+.yes-end{
+    position: relative;
+}
+.end-top{
+    position: absolute;
+    top: 0;
+}
+.end-top>image{
+   
+    width: 110rpx;
+    height: 108rpx;
+   
+}
+
+
+.end-bottom{
+    width: 162rpx;
+    height: 44rpx;
+    background: linear-gradient(91deg, #318CFF 0%, #0E56FF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60rpx 0px 0px 60rpx;
+    font-size: 20rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.center-top{
+    font-size: 32rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    /* color: #0E56FF; */
+    margin-bottom: 8rpx;    
+}
+.center-center{
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    font-family: PingFang SC;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 12rpx;
+}
+.center-bottom{
+    font-size: 28rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+
+.yes-end{
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+ 
+}
+
+.end-center{
+    margin-top: 30rpx;
+    font-size: 24rpx;
+    font-family: Source Han Sans CN;
+    font-weight: 400;
+    color: #333333;
+    margin-right:20rpx;
+    margin-bottom: 18rpx;
+}
+
+.no>image{
+    margin-top: 358rpx;
+    width:372rpx ;
+    height:284rpx;
+
+}

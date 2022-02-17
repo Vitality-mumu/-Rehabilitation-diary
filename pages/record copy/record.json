@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-dialog":"../../miniprogram_npm/@vant/weapp/dialog",
+    "van-field":"../../miniprogram_npm/@vant/weapp/field",
+    "van-overlay": "../../miniprogram_npm/@vant/weapp/overlay",
+    "van-dropdown-menu": "../../miniprogram_npm/@vant/weapp/dropdown-menu",
+    "van-dropdown-item": "../../miniprogram_npm/@vant/weapp/dropdown-item",
+    "van-datetime-picker":"../../miniprogram_npm/@vant/weapp/datetime-picker",
+    "van-popup":"../../miniprogram_npm/@vant/weapp/popup",
+    "van-cell":"../../miniprogram_npm/@vant/weapp/cell",
+    "van-toast":"../../miniprogram_npm/@vant/weapp/toast"
+  }
+}

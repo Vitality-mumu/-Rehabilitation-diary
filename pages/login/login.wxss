@@ -1,0 +1,106 @@
+.login-content {
+  width: 750rpx;
+  background-repeat: no-repeat;
+  padding-top: 720rpx;
+  background-image: url('https://wanbei.site/assets/img/temperature/login-bgc2.png');
+  background-size:100%;
+}
+
+
+.login-info {
+  width: 750rpx;
+  /* height: 728rpx; */
+  background: #ffffff;
+  opacity: 1;
+  border-radius: 60rpx 60rpx 0px 0px;
+  padding-top: 68rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 32rpx;
+  width: 640rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+}
+
+.blue-line {
+  width: 10rpx;
+  height: 34rpx;
+  background: #386CE2;
+  opacity: 1;
+  border-radius: 2rpx
+}
+
+.title>text {
+  margin-left: 16rpx;
+  font-size: 18px;
+  font-family: PingFang SC;
+  font-weight: 600;
+  color: #386CE2;
+}
+
+.input {
+  width: 640rpx;
+  height: 102rpx;
+  background: #EDEDED;
+  opacity: 1;
+  border-radius: 10rpx;
+  margin-bottom: 40rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.input-line {
+  width: 0px;
+  height: 26rpx;
+  margin-left: 26rpx;
+  border: 1px solid #B4B4B4;
+}
+
+image {
+  width: 40rpx;
+  height: 44rpx;
+  margin-left: 32rpx;
+}
+
+.btn {
+  margin-top: 34rpx;
+  width: 620rpx;
+  height: 102rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100rpx;
+}
+.common{
+  background-color: #B5B5B5;
+}
+
+.active{
+  background-color: #386CE2;
+}
+
+
+.van-cell{
+  background-color: #EDEDED !important;
+}
+
+.input-class{
+  flex: 1;
+}
+.privacy-file{
+  width: 640rpx;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+}
+
+navigator{
+  color: #42A5F5;
+}
